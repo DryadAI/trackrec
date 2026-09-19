@@ -1,0 +1,25 @@
+# Maintainer: DryadAI <264790950+DryadAI@users.noreply.github.com>
+pkgname=trackrec
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Record browser playback into one WAV per track, named from MPRIS metadata (CLI + GTK4 GUI)"
+arch=('any')
+url="https://github.com/DryadAI/trackrec"
+license=('MIT')
+depends=('python' 'python-gobject' 'gtk4' 'playerctl' 'ffmpeg' 'libpulse'
+         'gst-plugins-base' 'gst-plugins-good')
+optdepends=('pipewire-pulse: PulseAudio-compatible server on PipeWire systems'
+            'pavucontrol: adjust tab/output volume when recordings come out quiet')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('SKIP')
+
+check() {
+  cd "$pkgname-$pkgver"
+  python -m py_compile trackrec.py trackrec_gui.py
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  make DESTDIR="$pkgdir" PREFIX=/usr install
+  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

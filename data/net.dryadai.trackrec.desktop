@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=trackrec
+GenericName=Track Recorder
+Comment=Record browser playback into one WAV per track
+Exec=trackrec-gui
+Icon=net.dryadai.trackrec
+Terminal=false
+Categories=AudioVideo;Audio;Recorder;GTK;
+Keywords=record;audio;music;wav;mpris;
+StartupNotify=true
