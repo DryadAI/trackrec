@@ -1,0 +1,21 @@
+pkgbase = trackrec
+	pkgdesc = Record browser playback into one WAV per track, named from MPRIS metadata (CLI + GTK4 GUI)
+	pkgver = 0.1.0
+	pkgrel = 1
+	url = https://github.com/DryadAI/trackrec
+	arch = any
+	license = MIT
+	depends = python
+	depends = python-gobject
+	depends = gtk4
+	depends = playerctl
+	depends = ffmpeg
+	depends = libpulse
+	depends = gst-plugins-base
+	depends = gst-plugins-good
+	optdepends = pipewire-pulse: PulseAudio-compatible server on PipeWire systems
+	optdepends = pavucontrol: adjust tab/output volume when recordings come out quiet
+	source = trackrec-0.1.0.tar.gz::https://github.com/DryadAI/trackrec/archive/refs/tags/v0.1.0.tar.gz
+	sha256sums = SKIP
+
+pkgname = trackrec

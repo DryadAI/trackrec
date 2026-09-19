@@ -628,7 +628,13 @@ class Window(Gtk.ApplicationWindow):
         self.stop() if self.proc else self.start()
 
     def start(self):
-        self.set_outdir(self.out_entry.get_text())
+        out = Path(self.out_entry.get_text()).expanduser()
+        try:
+            out.mkdir(parents=True, exist_ok=True)  # so the folder watch is live from the first track
+        except OSError as e:
+            self.log(f"cannot create {out}: {e}")
+            return
+        self.set_outdir(str(out))
         cmd = [sys.executable, "-u", str(SCRIPT), "--out", str(self.outdir())]
         prefix = self.selected_prefix()
         if prefix:
