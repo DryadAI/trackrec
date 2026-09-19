@@ -11,7 +11,7 @@ depends=('python' 'python-gobject' 'gtk4' 'playerctl' 'ffmpeg' 'libpulse'
 optdepends=('pipewire-pulse: PulseAudio-compatible server on PipeWire systems'
             'pavucontrol: adjust tab/output volume when recordings come out quiet')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('SKIP')
+sha256sums=('0e0bdcf181ccd8f1a019ae67006c498207e0f1008b81c5a9665b0d1f3f7c82fc')
 
 check() {
   cd "$pkgname-$pkgver"

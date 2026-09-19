@@ -16,6 +16,6 @@ pkgbase = trackrec
 	optdepends = pipewire-pulse: PulseAudio-compatible server on PipeWire systems
 	optdepends = pavucontrol: adjust tab/output volume when recordings come out quiet
 	source = trackrec-0.1.0.tar.gz::https://github.com/DryadAI/trackrec/archive/refs/tags/v0.1.0.tar.gz
-	sha256sums = SKIP
+	sha256sums = 0e0bdcf181ccd8f1a019ae67006c498207e0f1008b81c5a9665b0d1f3f7c82fc
 
 pkgname = trackrec
